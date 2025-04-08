@@ -52,6 +52,8 @@ This Streamlit-based application generates artistic image concepts by combining 
 - Python 3.8 or newer.
 - Playground 2.5 aesthetic from https://huggingface.co/playgroundai/playground-v2.5-1024px-aesthetic
 - Aesthetic CLP+MLP model from this repository i.e sac+logos+ava1-l14-linearMSE.pth
+- Fonts from this repository
+- Kuku Fm logo from this repository
 - Required libraries:
   - `streamlit`
   - `openai`

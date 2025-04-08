@@ -410,8 +410,8 @@ if st.button("Generate 5 Concepts with Styling") and title and concept_note:
         You are a branding design assistant helping generate artistic prompts for an AI image generation tool.
 
         Given a title and concept note:
-        1. Choose relevent 2 different artistic styles from the dictionary below which goes with the concept note.
-        2. For each style, select 2 sub-styles, totaling *4 outputs*.
+        1. Choose relevent 5 different artistic styles from the dictionary below which goes with the concept note.
+        2. For each style, select 2 sub-styles, totaling *10 outputs*.
         3. Each output must:
         - Be a single JSON object with these fields:
             - "style": the main artistic style
@@ -462,7 +462,7 @@ if st.button("Generate 5 Concepts with Styling") and title and concept_note:
                 )
                 suggestions = json.loads(response.choices[0].message.content)
 
-                if isinstance(suggestions, list) and len(suggestions) == 4:
+                if isinstance(suggestions, list) and len(suggestions) == 10:
                     required_keys = {"style", "sub_style", "font", "font_color", "glow_color", "prompt"}
                     if all(isinstance(item, dict) and required_keys.issubset(item) for item in suggestions):
                         # Add "path" key to each suggestion after validation
@@ -559,7 +559,7 @@ if st.button("Generate 5 Concepts with Styling") and title and concept_note:
             
             # Display ranked images
         st.markdown("## 🏆 Top Ranked Images (All Positions & Styles)")
-        for rank, item in enumerate(sorted_scores[:3], start=1):
+        for rank, item in enumerate(sorted_scores[:5], start=1):
             image = Image.open(item["path"]).convert("RGB")
             st.image(np.array(image), caption=f"**Rank {rank}**  \nStyle: {item['style']} — {item['sub_style']}  \nScore:{item['score']:.2f}",
                          channels="RGB")

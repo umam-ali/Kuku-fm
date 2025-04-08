@@ -1,1 +1,1 @@
-# Fonts used int repository
+# Fonts used in this repository

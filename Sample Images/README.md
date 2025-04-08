@@ -1,1 +1,1 @@
-#Contains the sample images generated
+# Contains the sample images generated
